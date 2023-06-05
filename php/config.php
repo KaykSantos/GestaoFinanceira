@@ -48,6 +48,7 @@ function Cadastrar($name, $email, $password){
 
 function CadastrarCompra($name, $preco, $date, $desc){
     $query = 'INSERT INTO compra VALUES (null, "'.$name.'", '.$preco.', "'.$date.'", "'.$desc.'", '.$_SESSION['id_user'].')';
+    // echo $query;
     $result = $GLOBALS['conn']->query($query);
     if($result){
         header('Location: ../home');

@@ -1,3 +1,8 @@
 <?php
 include('php/config.php');
-header('Location: login/');
+if(isset($_SESSION['id_user'])){
+    header('Location: home/');
+}else{
+    header('Location: login/');
+}
+

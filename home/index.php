@@ -19,7 +19,7 @@
     <header>
         <p>Gestão Financeira</p>
         <div>
-            <a href="../analise">Análise</a>
+            <a href="../analise/?week=1">Análise</a>
         </div>
     </header>
     <main>
@@ -27,7 +27,7 @@
             <form method="POST">
                 <h2>Cadastrar compra</h2>
                 <input type="text" id="name" name="name" placeholder="Nome da compra:">
-                <input type="number" id="preco" name="preco" placeholder="Preço:">
+                <input type="number" step=".01" id="preco" name="preco" placeholder="Preço:">
                 <label for="date">Data da compra:</label>
                 <input type="date" id="date" name="date">
                 <input type="text" name="desc" id="desc" placeholder="Descrição da compra (opcional)">
@@ -37,7 +37,7 @@
         <div id="div-right">
             <div id="list">
                 <?php
-                    $query = 'SELECT * FROM compra WHERE id_user = "'.$_SESSION["id_user"].'" ORDER BY cd DESC';
+                    $query = 'SELECT * FROM compra WHERE id_user = "'.$_SESSION["id_user"].'" ORDER BY dt_compra DESC LIMIT 0, 10';
                     $result = $GLOBALS['conn']->query($query);
                     $rows = mysqli_num_rows($result);
                     if($rows > 0){
@@ -65,11 +65,30 @@
                     }
                     
                 ?>
+                <!-- 
+                <div class="compra">
+                    <div>
+                        <p>Compra: '.$row['nome'].'</p>
+                        <p>Preço: '.$row['preco'].'</p>
+                        <p>Data: '.$dt_compra.'</p>
+                    </div>
+                    <div>
+                        <p>Descrição: '.$ds_compra.'</p>
+                    </div>
+                </div>  
+                 -->
             </div>
         </div>
     </main>
     <footer>
         <p>Todos direitos reservados</p>
     </footer>
+    <script>
+        // Obtém a data atual no formato "yyyy-mm-dd"
+        var dataAtual = new Date().toISOString().split("T")[0];
+        
+        // Define a data atual como o valor máximo do input
+        document.getElementById("date").max = dataAtual;
+    </script>
 </body>
 </html>

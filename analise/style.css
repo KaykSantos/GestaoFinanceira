@@ -46,13 +46,76 @@ main{
     /* background-color: red; */
 }
 
-section{
-    width: 100vw;
+
+div#div-left{
+    width: 400px;
     height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background-color: blue; */
+}
+
+div#div-left div#menu{
+    width: 90%;
+    height: calc(100vh - 140px);
     /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;    
+    margin: 10px 0px;
+}
+
+div#div-left div#menu a{
+    text-decoration: none;
+}
+
+div#div-left div#menu a:hover{
+    text-decoration:underline;
+}
+
+div#div-left div#menu h3{
+    margin: 5px 0px;
+}
+
+div#div-left div#menu hr{
+    width: 100%;
+}
+
+div#div-right{
+    width: calc(100vw - 400px);
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+    overflow-y: auto; 
+}
+
+div#div-right div#list{
+    width: 50vw;
+    height: calc(100vh - 120px);
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    padding-bottom: 160px;
+}
+
+.compra{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 20px 0px;
+}
+
+.compra div{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 form{

@@ -62,7 +62,8 @@ div#div-right{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: red; */
+    /* background-color: red; */ 
+    overflow-y: auto; 
 }
 
 div#div-right div#list{
@@ -71,7 +72,8 @@ div#div-right div#list{
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;  
+    padding-bottom: 60px;
 }
 
 .compra{
